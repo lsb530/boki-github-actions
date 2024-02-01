@@ -1,6 +1,7 @@
 ###
 #GET http://localhost:8080/test
-GET http://host.docker.internal:8080/test
+#GET http://host.docker.internal:8080/test
+GET http://127.0.0.1:8080/test
 
 > {%
     client.test("Request executed successfully", () => {
@@ -10,7 +11,8 @@ GET http://host.docker.internal:8080/test
 %}
 
 ###
-GET http://host.docker.internal:8080/test1
+#GET http://host.docker.internal:8080/test1
+GET http://127.0.0.1:8080/test1
 
 > {%
     client.test("Request executed successfully", () => {
