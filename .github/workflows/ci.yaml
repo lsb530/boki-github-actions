@@ -39,7 +39,7 @@ jobs:
         run: chmod +x ./src/test/test.sh
 
       - name: Run HTTP Tests
-        run: ./src/test/test.sh
+        run: ./src/test/test2.sh
 
 #      - name: Run tests
 #        run: ./gradlew test
