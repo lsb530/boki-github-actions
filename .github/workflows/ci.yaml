@@ -31,8 +31,18 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew build -x test
 
-      - name: Run tests
-        run: ./gradlew test
+      - name: Update test script permission
+        uses: chmod +x ./src/test/test.sh
+
+      - name: Start Spring Boot
+        run: ./gradlew bootRun &
+        timeout-minutes: 2  # 충분한 시간을 주어 애플리케이션이 시작될 수 있도록 합니다
+
+      - name: Run HTTP Tests
+        run: ./src/test/test.sh
+
+#      - name: Run tests
+#        run: ./gradlew test
 
       # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
       # the publishing section of your build.gradle
