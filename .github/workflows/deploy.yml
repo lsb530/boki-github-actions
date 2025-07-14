@@ -16,7 +16,12 @@ jobs:
         run: |
           echo "Good"
           echo "Morning"
-      - name: Github Actions Inner Varaible 확인
+      - name: Github Actions Inner Variable 확인
         run: |
           echo $GITHUB_SHA 
           echo $GITHUB_REPOSITORY
+      - name: Github Actions Secret 사용
+        run: |
+          echo ${{ secrets.MY_NAME }}
+          echo ${{ secrets.MY_HOBBY }}
+          echo ${{ secrets.MY_AGE }}
