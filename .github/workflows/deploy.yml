@@ -1,0 +1,22 @@
+name: Github Actions run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  My-Deploy-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello World
+        run: echo "Hello World"
+      - name: Multiple Sentence
+        run: |
+          echo "Good"
+          echo "Morning"
+      - name: Github Actions Inner Varaible 확인
+        run: |
+          echo $GITHUB_SHA 
+          echo $GITHUB_REPOSITORY
